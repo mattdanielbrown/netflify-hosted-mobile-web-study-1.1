@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Main Stylesheet
+   ========================================================================== */
+
+/* ./app/styles/main.scss
+   ========================================================================== */
+
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * Import partials here.
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+
+/* Import Partials */
+@import "vendor/vendor";
+@import "stylesheets/stylesheets";
+
+/* Style the outdated-browser upgrade warning */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

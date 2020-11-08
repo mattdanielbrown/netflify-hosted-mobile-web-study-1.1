@@ -1,0 +1,72 @@
+{
+  "private": true,
+  "engines": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "bourbon": "^7.0.0",
+    "jquery": "^3.5.1",
+    "modern-normalize": "^1.0.0",
+    "modernizr": "^3.11.3",
+    "modularscale-sass": "^3.0.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "autoprefixer": "^10.0.1",
+    "browser-sync": "^2.26.13",
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-filter": "^6.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-load-plugins": "^2.0.5",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-size": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^5.0.0",
+    "mkdirp": "^1.0.4",
+    "mocha": "^8.2.1",
+    "postcss": "^8.1.6",
+    "yargs": "16.1.0"
+  },
+  "scripts": {
+    "serve:test": "cross-env NODE_ENV=test gulp serve",
+    "serve:dist": "cross-env NODE_ENV=production gulp serve",
+    "start": "gulp serve",
+    "build": "cross-env NODE_ENV=production gulp",
+    "test": "npm run serve:test",
+    "tasks": "gulp --tasks"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+  ],
+  "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true,
+      "node": true,
+      "browser": true,
+      "jquery": true
+    },
+    "rules": {
+      "quotes": [
+        2,
+        "single"
+      ]
+    }
+  }
+}
