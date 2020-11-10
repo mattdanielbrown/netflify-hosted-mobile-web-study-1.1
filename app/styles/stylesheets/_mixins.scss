@@ -1,0 +1,115 @@
+/*
+ * =============================================================================
+ *   Mixins and Functions : ./app/styles/stylesheet/_mixins.scss
+ * =============================================================================
+ *
+ * Mixins and Functions declared in this file.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ */
+
+
+
+// * ---------------------------------------------------------------------------
+// * Function Definitions
+// * ---------------------------------------------------------------------------
+
+//== Generic Color (and Color-Related Property) Changes ========================
+
+// - Faded (Reduced Alpha/Opacity) Color
+@function faded-color($color: $action-color) { @return rgba($color, 0.25); }
+
+// - Reduce Transparency of Color
+@function color-with-alpha($color: $action-color, $alpha: 0.25) {
+  @return rgba($color, $alpha);
+}
+
+// - Translucent Color
+@function transulent-color($color: $action-color, $opacity: 0.25) {
+  @return rgba($color, $opacity);
+}
+
+
+//== Interaction-State-Change Color Adjustments ================================
+
+// - Hover Adjustmented Color
+@function hover-color ($color : $action-color) { @return darken($color, 10%); }
+
+// - Focus Adjustmented Color
+@function focus-color ($color : $action-color) { @return darken($color, 15%); }
+
+// - Active Adjustmented Color
+@function active-color($color : $action-color) { @return darken($color, 20%); }
+
+// Adjusted Color For Any State Change
+@function adjusted-color-for-state($color: $action-color, $state: hover) {
+  @if      ($state == hover  ) { @return hover-color($color);  }
+  @else if ($state == focus  ) { @return focus-color($color);  }
+  @else if ($state == active ) { @return active-color($color); }
+  @else                        { @return hover-color($color);  }
+}
+
+
+// * ---------------------------------------------------------------------------
+// * Mixins
+// * ---------------------------------------------------------------------------
+
+//== Changes For Interaction States ============================================
+
+// ! Color-Related Propery List Changed By Psuedo Selector Interaction States
+$state-changed-propList--bgc-bdc  : (background-color, border-color);
+$state-changed-propList--clr-bdc  : (color, border-color);
+$state-changed-propList--default  : $state-changed-propList--bgc-bdc;
+// ! These are just shorter (in # of chars) references to other variables
+$_scpl                            : $state-changed-propList--default;
+$_bclr                            : $action-color;
+// ! The above variables are exclusively for use with the following two @mixins,
+// ! ... as defaults, refs, or within scope.
+// -----------------------------------------------------------------------------
+
+// - Directly Add Styles for `::psuedo-selector` States
+@mixin apply-styles-for-state($state: hover) { &::#{$state} { @content; } }
+// - Apply appropriate state changes to each given property from base color
+@mixin set-state-changed-props-from-color($props: $_scpl, $color: $_bclr) {
+  // * -------------------------------------------------------------------------
+  // * Before anything else, ensure changes transition/animate :
+  transition: $transition;
+  // * -------------------------------------------------------------------------
+  // * First, redefine/reference variables/arguments to aid in code clarity,
+  // * (this also begins the conigureation of locally scoped variables) . . .
+  $_this-properties-to-adjust : $props; // * Change these properties...
+  $_this-normal-color         : $color; // * ...from this original color
+                                        // * ...to those for EACH ::psuedo state
+                                        // * ...-->
+                                        // * RESULTING ADJUSTED COLORS :
+  $_hover-color : hover-color($_this-normal-color);  // * Color during ::hover
+  $_focus-color : focus-color($_this-normal-color);  // * Color during ::focus
+  $_active-color: active-color($_this-normal-color); // * Color during ::active
+  // * -------------------------------------------------------------------------
+  // * Now,
+  // *    --> for each (&)::psuedo state of (this, current) selector :
+  // *    --> -> loop through each given PROPERTY ($_this-properties-to-adjust),
+  // *           ... and assign it's vaule to that of corresponding
+  // *           `$_[:PSUEDO-SELECTOR-STATE]-color` variable defined above
+  // * -------------------------------------------------------------------------
+  &:hover {
+    @each $color-property-to-change in $_this-normal-color {
+      #{$color-property-to-change}: $_hover-color;
+    }
+  }
+  // ? Dont forget to disable 'OUTLINE' property and apply the custom focus fx
+  &:focus {
+    outline: none;
+    box-shadow: $custom-focus-fx;
+    @each $color-property-to-change in $_this-normal-color {
+      #{$color-property-to-change}: $_focus-color;
+    }
+  }
+  &:active {
+    @each $color-property-to-change in $_this-normal-color {
+      #{$color-property-to-change}: $_active-color;
+    }
+  }
+}

@@ -1,52 +1,60 @@
 // Colors
-$blue: #6001FF;
-$blue-light: #5f25ff;
-$gray: #333;
-$white: #fff;
+//$blue: #6001FF;
+$blue                      : #7229f5 !default;
+//$blue-light: #5f25ff;
+$blue-light                : #8c43f6 !default;
+$blue-dark                 : #5c1fc4 !default;
+$blue-darker               : #441493 !default;
+$blue-darkest              : #2d0b62 !default;
+$gray                      : #333333 !default;
+$white                     : #ffffff !default;
 
 // Font Colors
-$font-color--base: $gray;
-$action-color: $blue;
-$action-color--alt: $blue-light;
-$action-color--contrast: $white;
+$font-color--base          : $gray;
+$action-color              : $blue;
+$action-color--alt         : $blue-light;
+$action-color--hover       : $blue-dark;
+$action-color--focus       : $blue-darker;
+$action-color--active      : $blue-darkest;
+$action-color--contrast    : $white;
 
 // Background Colors
-$viewport-background-color: $white;
+$viewport-background-color : $white;
 
 :root {
   // Typography
-  --font-family: system-ui, sans-serif;
-  --font-family--heading: var(--font-family);
+  --border                   : var(--border-width) solid currentColor;
+  --duration                 : 150ms;
 
-  --font-weight--thin: 100;
-  --font-weight--extra-light: 200;
-  --font-weight--light: 300;
-  --font-weight--normal: 400;
-  --font-weight--medium: 500;
-  --font-weight--semi-bold: 600;
-  --font-weight--bold: 700;
-  --font-weight--extra-bold: 800;
-  --font-weight--black: 900;
+  --spacing                  : 1.5rem;
+  --timing                   : ease;
+  --spacing--small           : 0.75rem;
+  --font-family              : system-ui, sans-serif;
+  --font-family--heading     : var(--font-family);
+  --line-height              : 1.5;
+  --line-height--heading     : 1.2;
+  --focus-outline            : var(--focus-outline-width) solid #{$action-color};
+  --focus-outline-offset     : 0.125rem;
 
   // Line heights
-  --line-height: 1.5;
-  --line-height--heading: 1.2;
+  --focus-outline-width      : 0.1875rem;
+  --border-radius            : 0.1875rem;
 
   // Other Sizes
-  --border-radius: 0.1875rem;
-  --spacing: 1.5rem;
-  --spacing--small: 0.75rem;
+  --font-weight--black       : 900;
+  --font-weight--bold        : 700;
+  --font-weight--extra-bold  : 800;
 
   // Borders
-  --border-width: 0.0625rem;
-  --border: var(--border-width) solid currentColor;
+  --font-weight--extra-light : 200;
+  --font-weight--light       : 300;
 
   // Focus
-  --focus-outline-width: 0.1875rem;
-  --focus-outline-offset: 0.125rem;
-  --focus-outline: var(--focus-outline-width) solid #{$action-color};
+  --font-weight--medium      : 500;
+  --font-weight--normal      : 400;
+  --font-weight--semi-bold   : 600;
 
   // Animations
-  --duration: 150ms;
-  --timing: ease;
+  --font-weight--thin        : 100;
+  --border-width             : 0.0625rem;
 }

@@ -1,0 +1,66 @@
+//------------------------------------------------------------------------------
+//  Variables Definition
+//------------------------------------------------------------------------------
+
+
+// * Colors --------------------------------------------------------------------
+$blue                : #7229f5;
+$blue-light          : #8c43f6;
+$blue-dark           : #5c1fc4;
+$blue-darker         : #441493;
+$blue-darkest        : #2d0b62;
+
+// * State Change Amounts ------------------------------------------------------
+$hover-change        : 10%;
+$focus-change        : 15%;
+$active-change       : 20%;
+
+// * State Change Amounts ------------------------------------------------------
+$transition-dur      : 120ms;
+$transition-delay    : 0;
+$transition-props    : all;
+$transition-time     : ease-out;
+$transition          : $transition-props $transition-dur $transition-time;
+
+// * State Change Amounts ------------------------------------------------------
+$transform-amount    : 2px;
+$transform           : translatey($transform-amount);
+
+// * Typography ----------------------------------------------------------------
+$typescale-xs        : 17px;
+$typescale-sm        : 18px;
+$typescale-md        : 19px;
+$typescale-lg        : 20px;
+$typescale-xl        : 21px;
+$typescale-xxl       : 22px;
+
+// * Breakpoints ---------------------------------------------------------------
+$breakpoint-xs       : 300px;
+$breakpoint-sm       : 560px;
+$breakpoint-md       : 640px;
+$breakpoint-ml       : 768px;
+$breakpoint-lg       : 960px;
+$breakpoint-xl       : 1280px;
+$breakpoint-xxl      : 1440px;
+
+// * Custom Focus Effect -------------------------------------------------------
+$no-outline          : none;
+$disabled-outline    : none;
+$focus-fx-base-color : $action-color;
+$focus-fx-alpha      : 0.3;
+$focus-fx-shadow     : 0 0 0 3px;
+$custom-focus-fx     : $focus-fx-shadow rgba($focus-fx-base-color, $focus-fx-alpha);
+
+// * Interaction State Change Map ----------------------------------------------
+$psuedo-states-list  : ('hover', 'focus', 'active');
+$psuedoStatesList    : ('::hover', '::focus', '::active');
+$psuedoStatesMap     : (
+  hover  : '::hover',
+  focus  : '::focus',
+  active : '::active'
+);
+$psuedoStates-Map    : (
+  'hover'  : '::hover',
+  'focus'  : '::focus',
+  'active' : '::active'
+);

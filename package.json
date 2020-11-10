@@ -1,4 +1,16 @@
 {
+  "name"        : "netllify-hosted-web-study-1.1" ,
+  "version"     : "0.1.1",
+  "description" : "Exploring Mobile Web Design." ,
+  "author" : {
+    "name" : "Matt Daniel Brown",
+    "email" : "dev@mattbrown.email",
+    "url" : "https://mattbrown.codes"
+  },
+  "readme" : "README.md" ,
+  "dist"   : {
+
+  } ,
   "private": true,
   "engines": {
     "node": ">=4"
