@@ -14,35 +14,54 @@ a {
 
 %buttonbase {
   appearance: none;
-  background-color: $action-color;
+  //background-color: $action-color;
+  background-color : lightgray;
+  color: #555;
   border: 0;
-  border-radius: var(--border-radius);
-  color: $action-color--contrast;
+  //border-radius: var(--border-radius);
+  border-radius: 3px;
+  //color: $action-color--contrast;
   cursor: pointer;
-  line-height : 1.25;
+  line-height : 1 !important;
   font-family: var(--font-family-base);
   font-size: 1.125rem;
-  //-webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   font-weight: 600;
   letter-spacing : .5px;
 
   padding: var(--spacing--small) var(--spacing);
   text-align: center;
   text-decoration: none;
-  transition: background-color var(--duration) var(--timing);
+  transition:
+    background-color var(--duration) var(--timing),
+    border-color var(--duration) var(--timing),
+    color var(--duration) var(--timing),
+    transform var(--duration) var(--timing);
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
 
+  $_this-btn-color: lightgray;
   &:hover {
-    background-color: $action-color--alt;
+    $_this-color: darken($_this-btn-color, 5%);
+    background-color : $_this-color;
+    border-color : $_this-color;
   }
-
   &:focus {
-    outline: var(--focus-outline);
-    outline-offset: var(--focus-outline-offset);
+    //outline: var(--focus-outline);
+    //outline-offset: var(--focus-outline-offset);
+    outline : none;
+    $_this-color: darken($_this-btn-color, 15%);
+    background-color : $_this-color;
+    border-color : $_this-color;
+    box-shadow: 0 0 0 4px rgba($action-color, 0.3);
   }
-
+  &:active {
+    $_this-color: darken($_this-btn-color, 20%);
+    background-color : $_this-color;
+    border-color : $_this-color;
+    transform: translateY(2px);
+  }
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
@@ -64,10 +83,69 @@ a {
   margin : var(--this-margins);
   width : var(--this-width);
 
+  &.primary {
+    $_this-btn-color: $action-color;
+    background-color: $_this-btn-color;
+    color: $action-color--contrast;
+
+    &:hover {
+      $_this-color: darken($_this-btn-color, 10%);
+      background-color : $_this-color;
+      border-color : $_this-color;
+    }
+    &:focus {
+      //outline: var(--focus-outline);
+      //outline-offset: var(--focus-outline-offset);
+      outline : none;
+      $_this-color: darken($_this-btn-color, 15%);
+      background-color : $_this-color;
+      border-color : $_this-color;
+      box-shadow: 0 0 0 4px rgba($action-color, 0.3);
+    }
+    &:active {
+      $_this-color: darken($_this-btn-color, 20%);
+      background-color : $_this-color;
+      border-color : $_this-color;
+      transform: translateY(2px);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &.secondary {
+    $_this-btn-color: $secondary-color;
+    background-color: $_this-btn-color;
+    color: $action-color--contrast;
+
+    &:hover {
+      $_this-color: darken($_this-btn-color, 10%);
+      background-color : $_this-color;
+      border-color : $_this-color;
+    }
+    &:focus {
+      //outline: var(--focus-outline);
+      //outline-offset: var(--focus-outline-offset);
+      outline : none;
+      $_this-color: darken($_this-btn-color, 15%);
+      background-color : $_this-color;
+      border-color : $_this-color;
+      box-shadow: 0 0 0 4px rgba($action-color, 0.3);
+    }
+    &:active {
+      $_this-color: darken($_this-btn-color, 20%);
+      background-color : $_this-color;
+      border-color : $_this-color;
+      transform: translateY(2px);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
 
 }
-
-
 
 button, [type="button"], [type="reset"], [type="submit"], .button {
   @extend %buttonbase;
@@ -94,7 +172,6 @@ button, [type="button"], [type="reset"], [type="submit"], .button {
     }
   }
 }
-
 
 // * ---------------------------------------------------------------------------
 // * Inputs

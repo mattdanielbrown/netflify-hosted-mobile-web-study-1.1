@@ -1,0 +1,17 @@
+
+
+:root {
+  font-size : $typescale-xs;
+  @include min-width($breakpoint-sm) { font-size : $typescale-sm; }
+  @include min-width($breakpoint-md) { font-size : $typescale-md; }
+  @include min-width($breakpoint-xl) { font-size : $typescale-xl; }
+  @include min-width($breakpoint-xxl) { font-size : $typescale-xxl; }
+}
+
+html {
+  font-size : 1rem;
+}
+body, p {
+  font-size : 1em;
+  line-height : 1.5;
+}

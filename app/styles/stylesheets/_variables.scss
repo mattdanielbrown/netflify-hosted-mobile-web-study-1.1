@@ -4,11 +4,16 @@
 
 
 // * Colors --------------------------------------------------------------------
-$blue                : #7229f5;
-$blue-light          : #8c43f6;
-$blue-dark           : #5c1fc4;
-$blue-darker         : #441493;
-$blue-darkest        : #2d0b62;
+//$blue                : #7229f5;
+//$blue-light          : #8c43f6;
+//$blue-dark           : #5c1fc4;
+//$blue-darker         : #441493;
+//$blue-darkest        : #2d0b62;
+$blue-light          : lighten($blue, 5%);
+$blue-dark           : darken($blue, 5%);
+$blue-darker         : darken($blue, 15%);
+$blue-darkest        : darken($blue, 25%);
+$secondary-color     : #333;
 
 // * State Change Amounts ------------------------------------------------------
 $hover-change        : 10%;
@@ -52,15 +57,15 @@ $focus-fx-shadow     : 0 0 0 3px;
 $custom-focus-fx     : $focus-fx-shadow rgba($focus-fx-base-color, $focus-fx-alpha);
 
 // * Interaction State Change Map ----------------------------------------------
-$psuedo-states-list  : ('hover', 'focus', 'active');
-$psuedoStatesList    : ('::hover', '::focus', '::active');
+$psuedo-states-list  : ("hover", "focus", "active");
+$psuedoStatesList    : ("::hover", "::focus", "::active");
 $psuedoStatesMap     : (
-  hover  : '::hover',
-  focus  : '::focus',
-  active : '::active'
+  hover : "::hover",
+  focus : "::focus",
+  active : "::active"
 );
 $psuedoStates-Map    : (
-  'hover'  : '::hover',
-  'focus'  : '::focus',
-  'active' : '::active'
+  "hover" : "::hover",
+  "focus" : "::focus",
+  "active" : "::active"
 );
