@@ -48,7 +48,7 @@
     "gulp-useref": "^5.0.0",
     "mkdirp": "^1.0.4",
     "mocha": "^8.2.1",
-    "postcss": "^8.1.6",
+    "postcss": "^8.1.7",
     "yargs": "16.1.0"
   },
   "scripts": {
