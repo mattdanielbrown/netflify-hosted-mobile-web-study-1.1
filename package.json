@@ -19,7 +19,7 @@
     "bourbon": "^7.0.0",
     "jquery": "^3.5.1",
     "modern-normalize": "^1.0.0",
-    "modernizr": "^3.11.3",
+    "modernizr": "^3.13.0",
     "modularscale-sass": "^3.0.10"
   },
   "devDependencies": {
@@ -33,7 +33,7 @@
     "del": "^6.0.0",
     "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-cli": "^2.3.0",
+    "gulp-cli": "^3.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-filter": "^6.0.0",
     "gulp-htmlmin": "^5.0.1",
