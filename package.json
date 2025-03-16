@@ -23,7 +23,7 @@
     "modularscale-sass": "^3.0.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.7",
+    "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.12.7",
     "autoprefixer": "^10.0.1",
     "browser-sync": "^2.26.14",
